@@ -1,0 +1,315 @@
+/* --- GERAL E LAYOUT --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 70px; /* Espaço para a topbar fixa */
+}
+
+.main-content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.main-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* --- BARRA SUPERIOR (TOPBAR) --- */
+.topbar.logged-in-topbar {
+    background-color: #c90000;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.logged-in-topbar .topbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.welcome-text {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+/* --- LISTA DE TREINOS --- */
+.workout-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.workout-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* --- CABEÇALHO DO TREINO (ACORDEÃO) --- */
+.workout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+}
+
+.workout-header:hover {
+    background-color: #efefef;
+}
+
+.workout-header h3 {
+    margin: 0;
+    color: #c90000;
+    flex-grow: 1; /* Permite que o título cresça */
+}
+
+.inline-edit-form { /* Formulário de editar nome do TREINO */
+    display: none;
+    flex-grow: 1;
+    margin-right: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.workout-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre os botões */
+}
+
+.expand-arrow {
+    font-size: 1em;
+    color: #888;
+    transition: transform 0.3s;
+}
+
+.workout-item.active .expand-arrow {
+    transform: rotate(180deg);
+}
+
+/* --- DETALHES DO TREINO (CONTEÚDO DO ACORDEÃO) --- */
+.workout-details {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+}
+
+.workout-item.active .workout-details {
+    padding: 20px;
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+}
+
+/* --- ITENS DE EXERCÍCIO --- */
+.exercise-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.exercise-item:last-of-type {
+    border-bottom: none;
+}
+
+/* REGRA DE LAYOUT ÚNICA E CORRETA */
+.exercise-header,
+.exercise-display,
+.inline-exercise-edit-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* 4 colunas: Nome, Carga, Reps, Ações */
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+}
+
+.exercise-header {
+    font-weight: bold;
+    color: #555;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #ddd;
+}
+
+.inline-exercise-edit-form {
+    display: none; /* Escondido por padrão */
+}
+
+.exercise-display .exercise-controls {
+    justify-self: flex-end; /* Alinha os botões à direita */
+}
+
+.exercise-display span:nth-child(2)::after {
+    content: " kg";
+    color: #888;
+    font-size: 0.9em;
+    margin-left: 4px;
+}
+
+/* --- FORMULÁRIO DE ADICIONAR EXERCÍCIO --- */
+.add-exercise-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* --- ESTADO DE PROGRESSÃO --- */
+.over-reps {
+    color: #c90000;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+/* --- BOTÕES E INPUTS DENTRO DOS TREINOS --- */
+.add-exercise-form input,
+.inline-exercise-edit-form input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.add-exercise-form button,
+.inline-exercise-edit-form button,
+.inline-edit-form button {
+    padding: 8px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-exercise-form button { background-color: #28a745; }
+.add-exercise-form button:hover { background-color: #218838; }
+
+.inline-exercise-edit-form button,
+.inline-edit-form button { background-color: #007bff; }
+
+.inline-exercise-edit-form button:hover,
+.inline-edit-form button:hover { background-color: #0056b3; }
+
+
+.edit-workout-btn, .delete-workout-btn, .edit-exercise-btn, .delete-exercise-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0;
+}
+
+.complete-workout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4em;
+    padding: 0;
+    color: #28a745;
+}
+.complete-workout-btn:hover {
+    transform: scale(1.2);
+}
+
+/* --- BOTÃO FLUTUANTE (+) --- */
+.add-workout-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #c90000;
+    color: white;
+    font-size: 36px;
+    line-height: 55px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.add-workout-btn:hover {
+    transform: scale(1.1);
+}
+
+/* --- MODAIS --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#notificationModal .modal-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-button.secondary {
+    background-color: #aaa;
+}
+.form-button.secondary:hover {
+    background-color: #888;
+}

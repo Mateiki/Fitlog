@@ -1,0 +1,52 @@
+<!DOCTYPE html> <!--Para construir a base de um arquivo html basta digitar html:5 que o VScode completa-->
+<html lang="pt-BR"> <!-- Importante sempre lembrar da lingua mãe do site/projeto e modifica-lá -->
+<head>
+    <meta charset="UTF-8"> <!-- permite usar acentos como: á, é, ç e etc... -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- torna o site responsivo -->
+    <title>Fitlog</title> <!-- titulo da GUIA -->
+    <link rel="stylesheet" href="/static/style.css"> <!-- AINDA no HEAD é importante conectarmos ao arquivo CSS que estiliza a página-->
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-content">
+        <span class="logo"><img src="/static/img/logo.png" alt="logo" class="logo-mini"></span>
+            <div class="topbar-buttons">
+                <a href="/login" class="top-button">Login</a>
+                <a href="/cadastro" class="top-button">Cadastro</a>
+            </div>
+        </div>
+    </div>
+    <header> <!-- Dentro do BODY temos elementos semanticos como o header que serve para separar partes do site em "blocos" que podem ser re-utilizados e etc-->
+        <h1>Fitlog</h1> <!-- h1 é a tag de título -->
+        <p>Registre seus treinos. Acompanhe sua evolução. Progrida com inteligência.</p> <!-- tag <p> de paragrafo, colocamos um bom slogam para nosso site -->
+        <button onclick="rolarParaConteudo()">Saiba mais</button>
+        <img src="/static/img/Fitloghome.png" alt="Fitlog home img" class="homeimg">
+    </header>
+
+    <section id="conteudo"> <!-- Criei um "bloco" semantico para separar melhor e organizar o codigo e site -->
+        <h2>O que é o Fitlog?</h2>
+        <p>O Fitlog é um sistema online onde você registra os pesos que utilizou nos treinos e recebe sugestões automáticas de carga e repetições com base em métodos de progressão para uma melhor evolução.</p>
+        <h2>Sua funcionalidade:</h2>
+        <ul> <!-- Cria as "bolinhas" de topicalização -->
+            <li>Cadrasto e Login de usuário<br> → Gerando uma experiência personalizada</li>
+            <li>Registro de Exercícios e Cargas de forma simplificada<br> → Promovendo conforto ao usuário</li>
+            <li>Sistema planejado e personalizado de progressão de cargas<br> → Diferencial para sua evolução</li>
+            <li>Interface simples, funcional e pela internet <br> → Permitindo acesso de diferentes dispositivos</li>
+        </ul>
+            <div class="call-to-action">
+                <h2>Gostou? Então vamos começar!</h2>
+                    <div class="cta-buttons">
+                        <a href="/login" class="cta-button">Login</a>
+                        <a href="/cadastro" class="cta-button">Cadastre-se</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <footer>
+        <p>© 2025 Fitlog. Criado como projeto de aprendizado.</p>
+    </footer>
+
+<script src="/static/script.js"></script> <!-- Importa no body o arquivo de js-->
+</body>
+</html>

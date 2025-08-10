@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4; /* Um cinza claro para o fundo */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- BARRA SUPERIOR (TOPBAR) --- */
+.topbar {
+    background-color: #ffffff;
+    padding: 10px 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.topbar-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.logo-mini {
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* --- ESTILOS PARA FORMULÁRIOS E PÁGINAS DE AVISO --- */
+.form-container {
+    flex-grow: 1; /* Faz o container principal crescer e ocupar o espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Caixa principal do formulário ou aviso */
+.form-box,
+.aviso-box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* Títulos dentro das caixas */
+.form-box h2,
+.aviso-box h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #c90000; /* Vermelho característico do Fitlog */
+    font-size: 2em;
+}
+
+/* Parágrafos dentro da caixa de aviso */
+.aviso-box p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Rótulos dos formulários */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Campos de input */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #c90000;
+    outline: none;
+}
+
+
+/* Botão principal */
+.form-button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background-color: #c90000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #a10000; /* Um vermelho mais escuro no hover */
+}
+
+/* Link para alternar entre login/cadastro */
+.form-switch-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.form-switch-link a {
+    color: #c90000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+body{
+    margin: 0;
+    font-family: 'Segeo UI', sans-serif;
+    background-color: #eae7e7;
+    color: black;
+}
+
+.topbar {
+  background-color: #710b00;
+  color: white;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-mini {
+  height: 30px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.topbar-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.top-button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background: white;
+  color: #710b00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.top-button:hover {
+  background: #ffe0e0;
+}
+
+.topbar {
+  background-color: #710b00;
+  color: white;
+  padding: 5px 20px; /* era 10px, agora menor */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-mini img {
+  height: 40px;
+  width: auto;
+}
+
+.topbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.top-button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background: white;
+  color: #710b00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.top-button:hover {
+  background: #ffe0e0;
+}
+
+header{
+    background: linear-gradient(120deg, #710b00, #ff0a0f);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    text-align: center;
+}
+
+header h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: white;
+  color: #c90000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header button:hover {
+  background: #ecf0f1;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+section h2 {
+  margin-top: 30px;
+  color: #c90000;
+}
+
+section ul {
+  padding-left: 20px;
+}
+
+section button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+section button:hover {
+  background: #2980b9;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ddd;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.homeimg{
+    max-width: 20rem;
+    margin-bottom: 10px;
+}
+.call-to-action {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;             
+    margin-top: 20px;      
+}
+
+.top-button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background: white;
+  color: #710b00 !important; 
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.top-button:hover {
+  background: #ffe0e0;
+}
+
+.cta-button {
+  background-color: #c90000;  
+  color: white !important;   
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;      
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #710b00;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #c90000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #710b00;
+}
+
+.form-switch-link {
+    text-align: center;
+}

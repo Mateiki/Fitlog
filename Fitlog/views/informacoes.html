@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Informações - Fitlog</title>
+    <link rel="stylesheet" href="/static/style2.css">
+    <style>
+        /* Estilos específicos para esta página */
+        .info-section {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .info-section h3 {
+            margin-top: 0;
+            color: #c90000;
+            border-bottom: 2px solid #f4f4f4;
+            padding-bottom: 10px;
+        }
+        .info-section label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        .info-section input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .info-section .form-button {
+            width: auto;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+        }
+        .delete-zone {
+            border: 2px solid #c90000;
+            background-color: #ff00001a;
+        }
+        .delete-zone .form-button {
+            background-color: #c90000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topbar logged-in-topbar">
+        <div class="topbar-content">
+            <span class="welcome-text"><a href="/home" style="color:white;text-decoration:none;">Voltar</a></span>
+            <a href="/logout" class="top-button" style="color:white; text-decoration: none;">Deslogar</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h2>Gerenciar Conta</h2>
+
+        % if 'success' in locals() and success:
+                <p style="color: green; background: #eaffea; padding: 10px; border-radius: 5px;">{{success}}</p>
+                % end
+                % if 'error' in locals() and error:
+                <p style="color: red; background: #ffeeee; padding: 10px; border-radius: 5px;">{{error}}</p>
+        % end
+        <div class="info-section">
+            <h3>Suas Informações</h3>
+            <p><strong>Nome:</strong> {{usuario.nome}}</p>
+            <p><strong>Email:</strong> {{usuario.email}} <span style="color: red;">(não pode ser alterado)</span></p>
+        </div>
+
+        <div class="info-section">
+            <h3>Alterar Nome</h3>
+            <form action="/usuario/atualizar/nome" method="post">
+                <label for="novo_nome">Novo Nome:</label>
+                <input type="text" id="novo_nome" name="novo_nome" value="{{usuario.nome}}" required>
+                <button type="submit" class="form-button">Salvar Nome</button>
+            </form>
+        </div>
+
+        <div class="info-section">
+            <h3>Alterar Senha</h3>
+            <form action="/usuario/atualizar/senha" method="post">
+                <label for="senha_antiga">Senha Atual:</label>
+                <input type="password" id="senha_antiga" name="senha_antiga" required>
+                
+                <label for="nova_senha">Nova Senha:</label>
+                <input type="password" id="nova_senha" name="nova_senha" required>
+
+                <button type="submit" class="form-button">Alterar Senha</button>
+            </form>
+        </div>
+
+        <div class="info-section delete-zone">
+            <h3>Zona de Perigo</h3>
+            <p><strong>Atenção:</strong> Excluir sua conta é uma ação permanente e irreversível. Todos os seus treinos e dados serão perdidos para sempre.</p>
+            <form action="/usuario/deletar" method="post" onsubmit="return confirm('Você tem CERTEZA ABSOLUTA? Esta ação não pode ser desfeita.');">
+                <button type="submit" class="form-button">Excluir Minha Conta Permanentemente</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
